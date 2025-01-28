@@ -33,33 +33,12 @@
 | acm_cert.tf                        | Creates an SSL certificate and validates it for our domain and hosted zone.                                            |
 | cloudfront.tf                      | Creates a CloudFront distribution with the above created S3 bucket and ACM, as the origin and SSL Certificate respectively. |
 
-## Alternate Architectures 
-#### 1. Using `AWS Codepipeline` instead of Github action to implement CI/CD
-- Codepipeline creates another new bucket to store archive of the artifact after each execution of the pipeline.
-- At each pipeline execution, codepipeline fetches a zip of all files, stores it in a bucket and then extracts it and replaces the Site bucket with these files 
-- Our Github action updates only those files that are changed but Codepipeline replaces all the files regardless of whether changed or not. 
-- Github action is free while Codepipeline charges for each pipeline execution.
-##### Pros
-- More resilient and Highly available
-- Failover is easy 
+## Flow Diagram
 
-##### Cons 
-- More costly 
-- Operational overhead
+###Automation Flow
+![image](https://github.com/user-attachments/assets/72706f8d-6376-468f-ab2d-2dd18f751a59)
 
-Since Our project doesn't require us to build the site. Codepipeline is underused and could be considered when we need to build our application at each update. 
+"""DNS Configuration and Certificate Validation flow
+![image](https://github.com/user-attachments/assets/8f2b9d8a-159e-4ddf-aac8-1155efcf724c)
 
-#### 2. Using Github webhook + API Gateway + AWS Lambda to implement CI/CD
-- GitHub webhook will send a request to the API gateway which then will trigger the lambda function
-- Lambda function will fetch a zip of all the files from the GitHub repository, unzip it and replace all the current files of the s3 bucket with these new files 
-- We can use s3 versioning for failover. 
 
-##### Pros
-- More resilient and Highly available
-- Failover is easy 
-
-##### Cons 
-- More costly 
-- Operational overhead 
-
-Since Our project doesn't require us to build the site. The lambda function is underused, which in our case does copy and paste. It should be considered when we require more complex computations for build and deployment.
