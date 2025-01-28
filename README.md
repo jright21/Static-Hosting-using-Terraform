@@ -36,9 +36,9 @@
 ## Flow Diagram
 
 ### Automation Flow
-<img src="https://github.com/user-attachments/assets/72706f8d-6376-468f-ab2d-2dd18f751a59" alt="automation" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/72706f8d-6376-468f-ab2d-2dd18f751a59" alt="automation" width="400" height="700">
 
 ### DNS Configuration and Certificate Validation flow
-<img src="https://github.com/user-attachments/assets/8f2b9d8a-159e-4ddf-aac8-1155efcf724c" alt="configuration and validation" width="150" height="150">
+<img src="https://github.com/user-attachments/assets/8f2b9d8a-159e-4ddf-aac8-1155efcf724c" alt="configuration and validation" width="400" height="700">
 
 
