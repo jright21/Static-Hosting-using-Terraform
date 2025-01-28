@@ -3,18 +3,22 @@ variable "AWS_REGION" {
 }
 
 variable "BUCKET_NAME" {
-  default = "www-formative-minds-com"
+  default = "www-jright-xyz"
 }
 
 variable "DOMAIN_NAME" {
-  default = "formativeminds.com"
+  default = "jright.xyz"
 }
 
 
 variable "WILDCARD_DOMAIN_NAME" {
-  default = "*.formativeminds.com"
+  default = "*.jright.xyz"
 }
 
 variable "WWW_DOMAIN_NAME" {
-  default = "www.formativeminds.com"
+  default = "www.jright.xyz"
+}
+
+variable "EXISTING_ZONE_ID" {
+  default = "Z01167962Z285QM254ZOS"
 }

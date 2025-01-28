@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   comment             = "my-cloudfront"
   default_root_object = "index.html"
 
-  aliases = ["www.formativeminds.com", "formativeminds.com"]
+  aliases = ["www.jright.xyz", "jright.xyz"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]

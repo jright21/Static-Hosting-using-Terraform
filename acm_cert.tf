@@ -23,7 +23,7 @@ resource "aws_route53_record" "cname_acm" {
   records         = [each.value.record]
   ttl             = 60
   type            = each.value.type
-  zone_id         = aws_route53_zone.my_domain.zone_id
+  zone_id         = var.EXISTING_ZONE_ID
 }
 
 // Validating the ACM
